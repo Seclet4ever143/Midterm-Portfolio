@@ -27,7 +27,12 @@
         <v-row class="flex-grow-1 text-center">
           <v-col cols="10">
             <v-list nav>
-              <v-list-item v-for="(item, i) in menuItems" :key="i" :href="item.href" @click="closeDrawer" link>
+              <v-list-item 
+                v-for="(item, i) in menuItems" 
+                :key="i" 
+                @click="scrollToSection(item.href)"
+                link
+              >
                 <template v-slot:prepend>
                   <v-icon>{{ item.icon }}</v-icon>
                 </template>
@@ -70,6 +75,19 @@ export default {
   methods: {
     closeDrawer() {
       this.drawer = false
+    },
+    scrollToSection(id) {
+      const target = document.querySelector(id)
+      if (target) {
+        const headerHeight = 135
+        const position = target.offsetTop - headerHeight
+
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth'
+        })
+        this.closeDrawer()
+      }
     }
   }
 }

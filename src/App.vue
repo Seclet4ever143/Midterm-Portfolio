@@ -10,6 +10,7 @@
         <SkillsSection :theme="theme" :skills="skills" />
         <ServicesSection :theme="theme" :services="services" />
         <ProjectsSection :theme="theme" :projects="projects" />
+        <CertificateSection :theme="theme" :certificates="certificates" />
         <ContactSection :theme="theme" @submit-form="submitForm" />
       </v-container>
     </v-main>
@@ -28,9 +29,11 @@ import EducationSection from './components/EducationSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ServicesSection from './components/ServicesSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
+import CertificateSection from './components/CertificateSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import AppFooter from './components/AppFooter.vue'
 import ScrollToTopButton from './components/ScrollToTopButton.vue'
+
 
 export default {
   name: 'App',
@@ -42,6 +45,7 @@ export default {
     SkillsSection,
     ServicesSection,
     ProjectsSection,
+    CertificateSection,
     ContactSection,
     AppFooter,
     ScrollToTopButton
@@ -75,6 +79,51 @@ export default {
       { name: 'Weather App', image: require('@/assets/Weather-App.png'), description: 'A real-time weather application providing accurate forecasts', link: 'https://weather-app-inky-nu-90.vercel.app/' },
       { name: 'To-Do List', image: require('@/assets/ToDoList.png'), description: 'A task management application to help organize daily activities', link: 'https://puspus-to-do-list.vercel.app/' },
     ],
+
+    certificates: [
+    { 
+      name: 'DICT Certificate of Participation', 
+      image: require('@/assets/DICT-Cert.png'), 
+      issuer: 'DICT', 
+      date: 'March 2024',
+      link: 'DICT-Cert.pdf'
+    },
+    { 
+      name: 'HTML Sololearn Course Certificate', 
+      image: require('@/assets/HTML-Cert.png'), 
+      issuer: 'sololearn', 
+      date: 'November 2024',
+      link: 'HTML-Cert.pdf'
+    },
+    { 
+      name: 'CSS Sololearn Course Certificate', 
+      image: require('@/assets/CSS-Cert.png'), 
+      issuer: 'sololearn', 
+      date: 'November 2024',
+      link: 'CSS-Cert.pdf'
+    },
+    { 
+      name: 'JavaScript Sololearn Course Certificate', 
+      image: require('@/assets/JS-Cert.png'), 
+      issuer: 'sololearn', 
+      date: 'November 2024',
+      link: 'JS-Cert.pdf'
+    },
+    { 
+      name: 'JAVA Sololearn Course Certificate', 
+      image: require('@/assets/JAVA-Cert.png'), 
+      issuer: 'sololearn', 
+      date: 'November 2024',
+      link: 'JAVA-Cert.pdf'
+    },
+    { 
+      name: 'JAVA Intermediate Sololearn Course Certificate', 
+      image: require('@/assets/JAVA2-Cert.png'), 
+      issuer: 'sololearn', 
+      date: 'November 2024',
+      link: 'JAVA2-Cert.pdf'
+    }
+  ],
   }),
   methods: {
     toggleTheme() {
